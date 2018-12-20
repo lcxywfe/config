@@ -25,8 +25,8 @@
 "==========================================
 
 " 修改leader键
-let mapleader = ','
-let g:mapleader = ','
+" let mapleader = ','
+" let g:mapleader = ','
 
 " 开启语法高亮
 syntax on
