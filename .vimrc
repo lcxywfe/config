@@ -28,7 +28,8 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-" ==============================================================================
+" -----------------------------------------------------------------------------
+
 
 " ==============================================================================
 " ycm
@@ -56,7 +57,7 @@ let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-" ==============================================================================
+" -----------------------------------------------------------------------------
 
 syntax on
 
@@ -66,6 +67,8 @@ set nobackup
 
 set noswapfile
 
+let g:molokai_original = 1
+let g:rehash256 = 1 
 set background=dark
 set t_Co=256
 colorscheme molokai
