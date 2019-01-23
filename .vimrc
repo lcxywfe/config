@@ -14,6 +14,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rhysd/vim-clang-format'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -49,7 +50,7 @@ let g:ycm_complete_in_strings = 1
 "注释和字符串中的文字也会被收入补全
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
 "跳转分屏
-let g:ycm_goto_buffer_command = 'vertical-split'
+let g:ycm_goto_buffer_command = 'horizontal-split'
 " invoke omni completion by pressing ctrl+/ (ctrl+/ is recognized as C-_)
 inoremap <unique> <C-_> <C-X><C-O><C-P>
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR> " 跳转到定义处
@@ -58,6 +59,15 @@ let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 " -----------------------------------------------------------------------------
+
+" ==============================================================================
+" clang-format
+" ==============================================================================
+let g:clang_format#command = 'clang-format-5.0'
+let g:clang_format#detect_style_file = 1
+" -----------------------------------------------------------------------------
+
+
 
 syntax on
 
@@ -127,3 +137,17 @@ endfun
 autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 nmap <F2> :NERDTree  <CR>
+
+" 状态栏
+set laststatus=2      " 总是显示状态栏
+" highlight StatusLine cterm=bold ctermfg=yellow ctermbg=blue
+" 获取当前路径,将$HOME转化为~
+function! CurDir()
+        let curdir = substitute(getcwd(), $HOME, "~", "g")
+        return curdir
+endfunction
+" set statusline=%{CurDir()}\/%f%m%r%h\ \%=\|\ %l,%c\ %p%%\ \|\ ascii=%b,hex=%b%{((&fenc==\"\")?\"\":\"\ \|\ \".&fenc)}\ \|\ USER}\ @\ %{hostname()}\
+set statusline=%{CurDir()}\/%f%m%r%h\ \%=\|\ %l,%c\ %p%%\ \|\ %{((&fenc==\"\")?\"\":\"\ \|\ \".&fenc)}\
+
+:set pastetoggle=<F4>
+
