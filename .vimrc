@@ -12,7 +12,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
+Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/vim-clang-format'
 " All of your Plugins must be added before the following line
@@ -151,3 +151,5 @@ set statusline=%{CurDir()}\/%f%m%r%h\ \%=\|\ %l,%c\ %p%%\ \%{((&fenc==\"\")?\"\"
 
 :set pastetoggle=<F4>
 
+" for MAC
+set backspace=indent,eol,start
