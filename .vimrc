@@ -147,7 +147,7 @@ function! CurDir()
         return curdir
 endfunction
 " set statusline=%{CurDir()}\/%f%m%r%h\ \%=\|\ %l,%c\ %p%%\ \|\ ascii=%b,hex=%b%{((&fenc==\"\")?\"\":\"\ \|\ \".&fenc)}\ \|\ USER}\ @\ %{hostname()}\
-set statusline=%{CurDir()}\/%f%m%r%h\ \%=\|\ %l,%c\ %p%%\ \|\ %{((&fenc==\"\")?\"\":\"\ \|\ \".&fenc)}\
+set statusline=%{CurDir()}\/%f%m%r%h\ \%=\|\ %l,%c\ %p%%\ \%{((&fenc==\"\")?\"\":\"\ \|\ \".&fenc)}
 
 :set pastetoggle=<F4>
 
