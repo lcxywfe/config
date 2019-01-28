@@ -1,4 +1,3 @@
 # config
-config: k-vim, tmux
+config: zsh, tmux, vim
 
-k-vim: https://github.com/wklken/k-vim
