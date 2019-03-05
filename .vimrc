@@ -12,9 +12,11 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
+
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -136,7 +138,8 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-nmap <F2> :NERDTree  <CR>
+" nmap <F2> :NERDTree  <CR>
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " 状态栏
 set laststatus=2      " 总是显示状态栏
@@ -152,6 +155,3 @@ set statusline=%{CurDir()}\/%f%m%r%h\ \%=\|\ %l,%c\ %p%%\ \%{((&fenc==\"\")?\"\"
 :set pastetoggle=<F4>
 
 :set nowrap
-
-" for MAC
-" set backspace=indent,eol,start
