@@ -155,3 +155,6 @@ set statusline=%{CurDir()}\/%f%m%r%h\ \%=\|\ %l,%c\ %p%%\ \%{((&fenc==\"\")?\"\"
 :set pastetoggle=<F4>
 
 :set nowrap
+
+" for MAC
+" set backspace=indent,eol,start
