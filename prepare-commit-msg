@@ -1,5 +1,8 @@
 #!/bin/bash -e
 
+# .git/hooks/prepare-commit-msg
+# chmod +x prepare-commit-msg
+
 commit_msg=$(cat $1)
 if [[ $commit_msg != [* ]]; then
   branch=$(git symbolic-ref HEAD|sed s#refs/heads/##)
