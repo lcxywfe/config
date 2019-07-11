@@ -1,0 +1,41 @@
+{
+    "editor.fontSize": 16,
+    "workbench.colorTheme": "Monokai Pro",
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "files.trimTrailingWhitespace": true,
+    "files.associations": {
+        "*.cu": "cpp",
+        "*.cuh": "cpp",
+    },
+    "vim.incsearch": true,
+    "vim.hlsearch": true,
+    "vim.useCtrlKeys": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["H"],
+            "after": ["^"]
+        },
+        {
+            "before": ["L"],
+            "after": ["$"]
+        },
+        {
+            "before": ["<space>"],
+            "after": ["/"]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["H"],
+            "after": ["^"]
+        },
+        {
+            "before": ["L"],
+            "after": ["$"]
+        },
+    ],
+    "clang-format.executable": "/usr/bin/clang-format-5.0",
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+}
